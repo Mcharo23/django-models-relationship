@@ -15,7 +15,7 @@ class Brand(models.Model):
     address = models.CharField(max_length=100)
 
     def __str__(self) -> str:
-        return self.address
+        return self.model_name
 
 
 class Order(models.Model):
