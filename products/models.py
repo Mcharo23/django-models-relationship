@@ -19,14 +19,16 @@ class Brand(models.Model):
 
 
 class Order(models.Model):
-    products = models.ManyToManyField('Product')
+    product = models.ManyToManyField('Product')
+    quantity = models.IntegerField()
     total_amount = models.DecimalField(max_digits=10, decimal_places=2)
 
 
 class Product(models.Model):
     product_name = models.CharField(max_length=100)
+    price = models.IntegerField()
     description = models.TextField(max_length=200)
-    stok_level = models.IntegerField()
+    stock_level = models.IntegerField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
 

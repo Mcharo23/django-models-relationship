@@ -11,4 +11,8 @@ urlpatterns = [
         'create-category/', ProductViewset.as_view({'post': 'create_category'}), name='category-create'),
     path(
         'create-brand/', ProductViewset.as_view({'post': 'create_brand'}), name='brand-create'),
+    path(
+        '<int:pk>/place-order/', ProductViewset.as_view({'post': 'order'}), name='place-order'),
+    path(
+        '<int:pk>/delete-product/', ProductViewset.as_view({'post': 'create_brand'}), name='brand-create'),
 ]
